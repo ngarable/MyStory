@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QTS-Fb-3j7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LVt-Oc-PSY">
     <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -52,6 +52,9 @@
                                                     <constraint firstItem="cWj-4l-gh5" firstAttribute="leading" secondItem="pZ5-Zu-0dh" secondAttribute="leading" constant="16" id="wa9-Yq-RHP"/>
                                                     <constraint firstAttribute="bottom" secondItem="cWj-4l-gh5" secondAttribute="bottom" constant="16" id="xSp-nx-9GK"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="77f-Is-Oic" appends="YES" id="HZr-zU-Nb7"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TW-v2-9bU" userLabel="Third View">
                                                 <rect key="frame" x="185.66666666666663" y="0.0" width="175.33333333333337" height="336.66666666666669"/>
@@ -85,6 +88,9 @@
                                                     <constraint firstAttribute="trailing" secondItem="d1f-lq-Rqs" secondAttribute="trailing" constant="16" id="mir-0L-HOY"/>
                                                     <constraint firstItem="d1f-lq-Rqs" firstAttribute="leading" secondItem="9TW-v2-9bU" secondAttribute="leading" constant="16" id="thf-N8-Wov"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="E3V-wI-TO2" appends="YES" id="CUo-dX-b8b"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -122,6 +128,9 @@
                                                     <constraint firstItem="s6Z-np-8Yc" firstAttribute="top" secondItem="kXR-L2-u5B" secondAttribute="top" constant="16" id="sEj-E1-5U7"/>
                                                     <constraint firstAttribute="width" constant="175.66999999999999" id="sod-v7-PJ7"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="kbm-j6-C7T" appends="YES" id="UgV-ch-VJn"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OpU-Zz-ER8" userLabel="Fifth View">
                                                 <rect key="frame" x="185.66666666666663" y="0.0" width="175.33333333333337" height="336.66666666666669"/>
@@ -153,6 +162,9 @@
                                                     <constraint firstAttribute="trailing" secondItem="wkr-oF-IwW" secondAttribute="trailing" constant="16" id="ZXp-oa-hgj"/>
                                                     <constraint firstAttribute="bottom" secondItem="wkr-oF-IwW" secondAttribute="bottom" constant="16" id="eZG-Q1-FsK"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="7kk-qq-aqe" appends="YES" id="X5f-uM-21H"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -167,7 +179,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="38y-Vy-1PO" secondAttribute="trailing" constant="16" id="7ty-Fm-Utt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="38y-Vy-1PO" secondAttribute="bottom" constant="16" id="HHE-WO-c5k"/>
@@ -180,27 +192,39 @@
                     <navigationItem key="navigationItem" id="mGg-nG-F8J"/>
                     <size key="freeformSize" width="393" height="852"/>
                     <connections>
-                        <segue destination="kdO-gL-6Z4" kind="show" id="sZE-R5-XJe"/>
+                        <segue destination="kdO-gL-6Z4" kind="show" identifier="detailSegue" id="sZE-R5-XJe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="77f-Is-Oic">
                     <connections>
-                        <action selector="didTapBlessing:" destination="BYZ-38-t0r" id="cnh-Gp-XSf"/>
+                        <action selector="didTapAction:" destination="BYZ-38-t0r" id="fIK-dw-1Ob"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="E3V-wI-TO2"/>
-                <tapGestureRecognizer id="kbm-j6-C7T"/>
-                <tapGestureRecognizer id="7kk-qq-aqe"/>
+                <tapGestureRecognizer id="E3V-wI-TO2">
+                    <connections>
+                        <action selector="didTapAction:" destination="BYZ-38-t0r" id="opT-b5-VGh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kbm-j6-C7T">
+                    <connections>
+                        <action selector="didTapAction:" destination="BYZ-38-t0r" id="qXO-3E-3gV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7kk-qq-aqe">
+                    <connections>
+                        <action selector="didTapAction:" destination="BYZ-38-t0r" id="Jue-ri-rak"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1954.9618320610687" y="3.5211267605633805"/>
         </scene>
         <!--Blessing's Story-->
         <scene sceneID="21x-69-A8O">
             <objects>
                 <viewController id="kdO-gL-6Z4" customClass="DetailViewController" customModule="MyStory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hX4-lh-sUR">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="FFa-3i-76S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -209,22 +233,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbT-Yn-gwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797" y="14"/>
+            <point key="canvasLocation" x="2722.9007633587785" y="13.380281690140846"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="I6O-Fq-5BS">
+        <scene sceneID="LAI-tR-BJ0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QTS-Fb-3j7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LVt-Oc-PSY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sAF-sS-dd2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Djn-Uc-UJD">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zln-Ir-aqm"/>
+                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bqd-XE-cbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyS-0g-zBl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
